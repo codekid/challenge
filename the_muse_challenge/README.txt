@@ -12,6 +12,7 @@ Get Data retrieves all pages counting from the very first page (page 0) through 
 If the amount specified is more than the number of pages then the amount will default to the maximum number from the data source.
 Delete Data removes all information from the database.
 Answer query answers the question that given in the assignment.
+Insert All Data retrieves all information that is available.
 
 Feature enhancements
 - Retrieval of pages based on a range (pages 3 - 5)
