@@ -84,6 +84,22 @@
         
     }
 
+    function insertAllData(){
+        $maxPageCount = getMaxPageCount();
+        
+        try {
+            for($currentPage=0; $currentPage < $maxPageCount; $currentPage++){
+
+                pullJobData($currentPage);
+
+            }
+            echo "insert successful";
+        } catch (Exception $e) {
+		  echo 'Caught exception: ',  $e->getMessage(), "\n";
+	    }
+        
+    }
+
 
     /*
         Check if array is empty and whether an empty array was passed to the function

@@ -49,18 +49,25 @@
           </form>
           <br/>
           <br/>
-          <form name="deleteData" action="index.php" method="POST">
-              <div class="form-group">
-                <button type="submit" name="btnDeleteData" id="btnDeletetData"  class="btn btn-danger">Delete Data</button>
-              </div>
-          </form>
-          <br/>
-          <br/>
-          <form name="tData" action="index.php" method="POST">
-              <button type="submit" name="btnSelectData" id="btnSelectData" class="btn btn-primary" onclick="selectData()">Answer query</button>
-              
-          
-          </form>
+          <div class="btn-toolbar">
+                  <form name="deleteData" action="index.php" method="POST">
+                        <div class="btn-group">
+                                <button type="submit" name="btnDeleteData" id="btnDeletetData"  class="btn btn-danger">Delete Data</button>
+                        </div>
+                  </form>
+                  <br/>
+                  <br/>
+                  <form name="tData" action="index.php" method="POST">
+                      <div class="btn-group">
+                          <button type="submit" name="btnSelectData" id="btnSelectData" class="btn btn-primary" onclick="selectData()">Answer query</button>
+                      </div>
+                  </form>
+                 <form name="insertAllData" action="index.php" method="POST">
+                      <div class="btn-group">
+                          <button type="submit" name="btnInsertAllData" id="btnInsertAllData" class="btn btn-primary">Insert All Data</button>
+                     </div>
+                  </form>
+          </div>
           
 <?php
     include 'functions.php';
@@ -87,6 +94,14 @@
         echo "How many jobs with the location \"New York City Metro Area\" were published from September 1st to 30th 2016? That would be: " . $job_count;
         
     }
+          
+    /*if Insert All Data button was pressed*/      
+    if((isset($_POST['btnInsertAllData']) )){
+        
+        insertAllData();
+        
+    }
+    
     
     /*if Get Data button was pressed*/      
     if (isset($_POST['inptPageNumber']) && is_numeric($_POST['inptPageNumber']) && isset($_POST['btnInsertData']) ){
